@@ -5,7 +5,7 @@ on:
   pull_request:
 
 env:
-  SOLUTION_FILE_PATH: .
+  SOLUTION_FILE_PATH: ./File-Resurrect/.
   BUILD_CONFIGURATION: Release
 
 jobs:
@@ -13,9 +13,9 @@ jobs:
     runs-on: windows-latest
 
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        platform: [ "x64" ]
+        platform: [ "x86","x64" ]
 
     steps:
     - name: Checkout
