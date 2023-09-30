@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        platform: [ "x86","x64" ]
+        platform: [ "x64" ]
 
     steps:
     - name: Checkout
@@ -26,3 +26,9 @@ jobs:
 
     - name: Build
       run: msbuild /m /p:Platform=${{matrix.platform}} /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+      
+    - name: Upload Artifacts
+    - uses: actions/upload-artifact@v3
+      with:
+        name: File-Resurrect Windows x64
+        path: './File-Resurrect.exe'
