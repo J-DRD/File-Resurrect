@@ -5,7 +5,7 @@ on:
   pull_request:
 
 env:
-  SOLUTION_FILE_PATH: ./File-Resurrect/.
+  SOLUTION_FILE_PATH: .\File-Resurrect\File-Resurrect.sln
   BUILD_CONFIGURATION: Release
 
 jobs:
